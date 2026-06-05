@@ -6,7 +6,7 @@
 }
 
 .site_header {
-  padding-top: max(1rem, env(safe-area-inset-left));
+  padding-top: max(1rem, env(safe-area-inset-top));
   padding-left: max(1rem, env(safe-area-inset-left));
   padding-right: max(1rem, env(safe-area-inset-right));
   padding: 0 24px;
