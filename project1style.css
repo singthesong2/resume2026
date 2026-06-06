@@ -3,6 +3,7 @@
 
 .container {
   margin: 0 auto;
+  overflow: hidden;
 }
 
 .site_header {
@@ -94,8 +95,8 @@
 }
 
 img {
-  width: clamp(200px, 40vw, 380px);
-  height: clamp(140px, 30vw, 280px);
+  width: clamp(150px, 40vw, 380px);
+  height: clamp(110px, 30vw, 280px);
   border: 1px solid black;
   object-fit: cover;
   object-position: center 60%;
@@ -126,6 +127,12 @@ h1 {
   opacity: 0;
   animation: fade-left 3s ease-out 3.5s 1 normal forwards;
   text-shadow: 0.08em 0 #777676;
+}
+
+@media (min-width: 320px) and (max-width: 430px) {
+  h1 {
+    font-size: clamp(30px, 3vw, 40px);
+  }
 }
 
 @keyframes fade-left {
@@ -168,13 +175,12 @@ h1 {
 @media (min-width: 320px) and (max-width: 768px) {
   #content {
     padding: 0 4vw;
-    gap: 20px;
+    gap: 5px;
   }
 }
 
 .leftprofil {
   width: 50%;
-  min-width: 180px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -201,9 +207,16 @@ h1 {
   }
 }
 
-@media (min-width: 320px) and (max-width: 768px) {
+@media (max-width: 768px) {
   .leftprofil {
     gap: 5px;
+  }
+}
+
+@media (max-width: 430px) {
+  .leftprofil {
+    width: 45%;
+    gap: 1px;
   }
 }
 
@@ -325,6 +338,15 @@ h1 {
   color: #fffdf6;
 }
 
+@media (min-width: 320px) and (max-width: 768px) {
+  .exhibitionexperience ul,
+  .awardhistory ul,
+  .projecthistory ul,
+  .contact address {
+    font-size: clamp(7.5px, 2vw, 15px);
+  }
+}
+
 .skillgroup {
   display: grid;
   gap: clamp(1px, 0.5vw, 10px);
@@ -348,9 +370,17 @@ h1 {
   }
 }
 
+@media (min-width: 420px) and (max-width: 768px) {
+  .skillgroup {
+    grid-template-columns: repeat(2, 130px);
+    gap: 20px;
+  }
+}
+
 @media (min-width: 320px) and (max-width: 768px) {
   .skillgroup {
-    grid-template-columns: repeat(2, 110px);
+    grid-template-columns: repeat(2, 65px);
+    gap: 10px;
   }
 }
 
@@ -385,10 +415,17 @@ h1 {
   }
 }
 
-@media (min-width: 320px) and (max-width: 768px) {
+@media (min-width: 420px) and (max-width: 768px) {
   .skillgroup div {
-    width: 100px;
+    width: 70px;
     height: 25px;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 420px) {
+  .skillgroup div {
+    width: 60px;
+    height: 20px;
   }
 }
 
@@ -396,16 +433,72 @@ h1 {
   font-size: clamp(0.6rem, 0.8vw, 14px);
 }
 
+@media (min-width: 420px) and (max-width: 768px) {
+  .skillgroup div:nth-child(1) {
+    font-size: 5px;
+    line-height: 22px;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 420px) {
+  .skillgroup div:nth-child(1) {
+    font-size: 4.5px;
+    line-height: 18px;
+  }
+}
+
 .skillgroup div:nth-child(2) {
   font-size: clamp(0.7rem, 0.8vw, 17px);
+}
+
+@media (min-width: 420px) and (max-width: 768px) {
+  .skillgroup div:nth-child(2) {
+    font-size: 10px;
+    line-height: 21px;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 420px) {
+  .skillgroup div:nth-child(2) {
+    font-size: 7.5px;
+    line-height: 18px;
+  }
 }
 
 .skillgroup div:nth-child(3) {
   font-size: clamp(0.6rem, 0.8vw, 14px);
 }
 
+@media (min-width: 420px) and (max-width: 768px) {
+  .skillgroup div:nth-child(3) {
+    font-size: 6px;
+    line-height: 20px;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 420px) {
+  .skillgroup div:nth-child(3) {
+    font-size: 4.5px;
+    line-height: 18px;
+  }
+}
+
 .skillgroup div:nth-child(4) {
   font-size: clamp(0.4rem, 0.8vw, 11px);
+}
+
+@media (min-width: 420px) and (max-width: 768px) {
+  .skillgroup div:nth-child(4) {
+    font-size: 4.5px;
+    line-height: 23px;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 420px) {
+  .skillgroup div:nth-child(4) {
+    font-size: 4px;
+    line-height: 18px;
+  }
 }
 
 address a {
@@ -437,9 +530,21 @@ a:focus-visible {
   }
 }
 
+@media (pointer: fine) and (min-width: 320px) and (max-width: 1280px) {
+  a {
+    padding: 2px 0;
+  }
+}
+
 @media (pointer: coarse) {
   a {
     padding: 10px 16px;
+  }
+}
+
+@media (pointer: coarse) and (min-width: 320px) and (max-width: 1024px) {
+  a {
+    padding: 10px 0;
   }
 }
 
