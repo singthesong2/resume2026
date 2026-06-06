@@ -22,6 +22,13 @@ Resume 형태의 프로젝트입니다.
 <br>
 
 
+# 🌐Link
+<https://singthesong2.github.io/resume2026/>
+
+
+<br>
+
+
 # 🤔How Make It?
 Canva를 이용해 프로젝트에 쓸 디자인 받고, Figma layer로 정보를 불러와 디테일한 디자인을 수정 및 원하는 내용으로 맞춰 초안을 만들고
 
