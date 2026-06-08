@@ -179,48 +179,48 @@ h1 {
   }
 }
 
-.leftprofil {
+.leftprofile {
   width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
   opacity: 0;
-  animation: leftprofilfade-right 3s ease-out 9.5s 1 normal forwards;
+  animation: leftprofilefade-right 3s ease-out 9.5s 1 normal forwards;
 }
 
 @media (min-width: 1280px) {
-  .leftprofil {
+  .leftprofile {
     gap: 20px;
   }
 }
 
 @media (max-width: 1280px) {
-  .leftprofil {
+  .leftprofile {
     gap: 15px;
   }
 }
 
 @media (max-width: 1024px) {
-  .leftprofil {
+  .leftprofile {
     gap: 10px;
   }
 }
 
 @media (max-width: 768px) {
-  .leftprofil {
+  .leftprofile {
     gap: 5px;
   }
 }
 
 @media (max-width: 430px) {
-  .leftprofil {
+  .leftprofile {
     width: 45%;
     gap: 1px;
   }
 }
 
-@keyframes leftprofilfade-right {
+@keyframes leftprofilefade-right {
   from {
     transform: translateX(-40px);
   }
@@ -230,7 +230,7 @@ h1 {
   }
 }
 
-.leftprofil div:nth-child(odd) {
+.leftprofile div:nth-child(odd) {
   font-family: "Instrument Serif", serif;
   font-size: clamp(15px, 3vw, 32px);
   font-style: normal;
@@ -239,41 +239,41 @@ h1 {
   text-shadow: 2px 1px #777676;
 }
 
-.leftprofil div:nth-child(even) {
+.leftprofile div:nth-child(even) {
   height: 400px;
   font-size: clamp(10px, 2vw, 18px);
   font-style: normal;
   font-family: "Inter", sans-serif;
   opacity: 0;
-  animation: leftprofilthreefade-down 3s ease-out 12.5s 1 normal forwards;
+  animation: leftprofilethreefade-down 3s ease-out 12.5s 1 normal forwards;
 }
 
 @media (min-width: 1280px) {
-  .leftprofil div:nth-child(even) {
+  .leftprofile div:nth-child(even) {
     line-height: 1.8;
   }
 }
 
 @media (max-width: 1280px) {
-  .leftprofil div:nth-child(even) {
+  .leftprofile div:nth-child(even) {
     line-height: 1.7;
   }
 }
 
 @media (max-width: 1024px) {
-  .leftprofil div:nth-child(even) {
+  .leftprofile div:nth-child(even) {
     line-height: 1.6;
   }
 }
 
 @media (min-width: 320px) and (max-width: 768px) {
-  .leftprofil div:nth-child(even) {
+  .leftprofile div:nth-child(even) {
     height: 300px;
     line-height: 1.5;
   }
 }
 
-@keyframes leftprofilthreefade-down {
+@keyframes leftprofilethreefade-down {
   from {
     transform: translateY(-30px);
   }
@@ -283,7 +283,7 @@ h1 {
   }
 }
 
-.Rightprofil {
+.Rightprofile {
   box-sizing: border-box;
   height: auto;
   margin-right: calc(50% - 52vw);
@@ -293,10 +293,10 @@ h1 {
   background-color: rgba(0, 0, 0, 0.9);
   flex: 1;
   opacity: 0;
-  animation: rightprofilfade-left 3s ease-out 6.5s 1 normal forwards;
+  animation: rightprofilefade-left 3s ease-out 6.5s 1 normal forwards;
 }
 
-@keyframes rightprofilfade-left {
+@keyframes rightprofilefade-left {
   from {
     transform: translateX(40px);
   }
