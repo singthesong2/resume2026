@@ -21,7 +21,7 @@
   background-color: rgba(0, 0, 0, 0.7);
 }
 
-.site_header div {
+.site_header span {
   font-size: 30px;
   font-weight: 400;
   line-height: normal;
@@ -32,21 +32,21 @@
   white-space: nowrap;
 }
 
-.site_header div:nth-child(1) {
+.site_header span:nth-child(1) {
   justify-self: start;
 }
 
-.site_header div:nth-child(2) {
+.site_header span:nth-child(2) {
   justify-self: center;
 }
 
-.site_header div:nth-child(3) {
+.site_header span:nth-child(3) {
   justify-self: end;
 }
 
 @media (max-width: 1024px) {
   .site_header,
-  .site_header div {
+  .site_header span {
     height: clamp(50px, 3vw, 70px);
     font-size: clamp(28px, 2vw, 30px);
   }
@@ -54,7 +54,7 @@
 
 @media (min-width: 320px) and (max-width: 768px) {
   .site_header,
-  .site_header div {
+  .site_header span {
     height: clamp(30px, 3vw, 50px);
     font-size: clamp(15px, 2vw, 28px);
   }
@@ -230,7 +230,7 @@ h1 {
   }
 }
 
-.leftprofile div:nth-child(odd) {
+.leftprofile h2 {
   font-family: "Instrument Serif", serif;
   font-size: clamp(15px, 3vw, 32px);
   font-style: normal;
@@ -239,7 +239,7 @@ h1 {
   text-shadow: 2px 1px #777676;
 }
 
-.leftprofile div:nth-child(even) {
+.leftprofile p {
   height: 400px;
   font-size: clamp(10px, 2vw, 18px);
   font-style: normal;
@@ -249,25 +249,25 @@ h1 {
 }
 
 @media (min-width: 1280px) {
-  .leftprofile div:nth-child(even) {
+  .leftprofile p {
     line-height: 1.8;
   }
 }
 
 @media (max-width: 1280px) {
-  .leftprofile div:nth-child(even) {
+  .leftprofile p {
     line-height: 1.7;
   }
 }
 
 @media (max-width: 1024px) {
-  .leftprofile div:nth-child(even) {
+  .leftprofile p {
     line-height: 1.6;
   }
 }
 
 @media (min-width: 320px) and (max-width: 768px) {
-  .leftprofile div:nth-child(even) {
+  .leftprofile p {
     height: 300px;
     line-height: 1.5;
   }
@@ -314,11 +314,7 @@ h1 {
   margin-bottom: clamp(120px, 3vw, 170px);
 }
 
-.exhibitionexperience div,
-.awardhistory div,
-.projecthistory div,
-.skills > :first-child,
-.contact > :first-child {
+.Rightprofile h2 {
   font-family: "Instrument Serif", serif;
   font-style: normal;
   font-size: clamp(9px, 3vw, 33px);
@@ -349,159 +345,128 @@ h1 {
 
 .skillgroup {
   display: grid;
-  gap: clamp(1px, 0.5vw, 10px);
+  grid-template-columns: repeat(2, 230px);
+  gap: 18px 20px;
+  margin: 0;
+  padding: 0;
 }
 
-@media (min-width: 1280px) {
-  .skillgroup {
-    grid-template-columns: repeat(2, 150px);
-  }
+.skillgroup li {
+  width: 230px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 0 12px;
+  border: 1px solid #fff;
+  border-radius: 100px;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  text-align: center;
+  color: #fffdf6;
+  white-space: nowrap;
 }
 
-@media (max-width: 1280px) {
-  .skillgroup {
-    grid-template-columns: repeat(2, 150px);
-  }
+.skillgroup li:nth-child(1) {
+  font-size: clamp(12px, 1vw, 15px);
+}
+
+.skillgroup li:nth-child(2) {
+  font-size: 15px;
+}
+
+.skillgroup li:nth-child(3) {
+  font-size: clamp(12px, 1vw, 15px);
+}
+
+.skillgroup li:nth-child(4) {
+  font-size: 15px;
 }
 
 @media (max-width: 1024px) {
   .skillgroup {
-    grid-template-columns: repeat(2, 140px);
+    grid-template-columns: repeat(2, 145px);
+    gap: 12px;
+  }
+
+  .skillgroup li {
+    width: 145px;
+    height: 38px;
+  }
+
+  .skillgroup li:nth-child(1),
+  .skillgroup li:nth-child(3) {
+    font-size: 11px;
+  }
+
+  .skillgroup li:nth-child(2) {
+    font-size: 13px;
+  }
+
+  .skillgroup li:nth-child(4) {
+    font-size: 9px;
   }
 }
 
-@media (min-width: 420px) and (max-width: 768px) {
+@media (max-width: 768px) {
   .skillgroup {
-    grid-template-columns: repeat(2, 130px);
-    gap: 20px;
-  }
-}
-
-@media (min-width: 320px) and (max-width: 768px) {
-  .skillgroup {
-    grid-template-columns: repeat(2, 65px);
+    grid-template-columns: repeat(2, 90px);
     gap: 10px;
   }
-}
 
-.skillgroup div {
-  font-family: "Inter", sans-serif;
-  font-style: normal;
-  border: 1px solid #fff;
-  text-align: center;
-  line-height: 25px;
-  border-radius: 100px 100px;
-  color: #fffdf6;
-}
-
-@media (min-width: 1280px) {
-  .skillgroup div {
-    width: 150px;
+  .skillgroup li {
+    width: 90px;
     height: 30px;
   }
-}
 
-@media (max-width: 1280px) {
-  .skillgroup div {
-    width: 150px;
-    height: 30px;
+  .skillgroup li:nth-child(1),
+  .skillgroup li:nth-child(3) {
+    font-size: 7px;
   }
-}
 
-@media (max-width: 1024px) {
-  .skillgroup div {
-    width: 130px;
-    height: 30px;
+  .skillgroup li:nth-child(2) {
+    font-size: 9px;
   }
-}
 
-@media (min-width: 420px) and (max-width: 768px) {
-  .skillgroup div {
-    width: 70px;
-    height: 25px;
-  }
-}
-
-@media (min-width: 320px) and (max-width: 420px) {
-  .skillgroup div {
-    width: 60px;
-    height: 20px;
-  }
-}
-
-.skillgroup div:nth-child(1) {
-  font-size: clamp(0.6rem, 0.8vw, 14px);
-}
-
-@media (min-width: 420px) and (max-width: 768px) {
-  .skillgroup div:nth-child(1) {
-    font-size: 5px;
-    line-height: 22px;
-  }
-}
-
-@media (min-width: 320px) and (max-width: 420px) {
-  .skillgroup div:nth-child(1) {
-    font-size: 4.5px;
-    line-height: 18px;
-  }
-}
-
-.skillgroup div:nth-child(2) {
-  font-size: clamp(0.7rem, 0.8vw, 17px);
-}
-
-@media (min-width: 420px) and (max-width: 768px) {
-  .skillgroup div:nth-child(2) {
-    font-size: 10px;
-    line-height: 21px;
-  }
-}
-
-@media (min-width: 320px) and (max-width: 420px) {
-  .skillgroup div:nth-child(2) {
-    font-size: 7.5px;
-    line-height: 18px;
-  }
-}
-
-.skillgroup div:nth-child(3) {
-  font-size: clamp(0.6rem, 0.8vw, 14px);
-}
-
-@media (min-width: 420px) and (max-width: 768px) {
-  .skillgroup div:nth-child(3) {
+  .skillgroup li:nth-child(4) {
     font-size: 6px;
-    line-height: 20px;
   }
 }
 
-@media (min-width: 320px) and (max-width: 420px) {
-  .skillgroup div:nth-child(3) {
-    font-size: 4.5px;
-    line-height: 18px;
+@media (max-width: 420px) {
+  .skillgroup {
+    grid-template-columns: repeat(2, 75px);
+    gap: 8px;
+  }
+
+  .skillgroup li {
+    width: 75px;
+    height: 26px;
+  }
+
+  .skillgroup li:nth-child(1),
+  .skillgroup li:nth-child(3) {
+    font-size: 6px;
+  }
+
+  .skillgroup li:nth-child(2) {
+    font-size: 8px;
+  }
+
+  .skillgroup li:nth-child(4) {
+    font-size: 5px;
   }
 }
 
-.skillgroup div:nth-child(4) {
-  font-size: clamp(0.4rem, 0.8vw, 11px);
+.contact address {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
 }
 
-@media (min-width: 420px) and (max-width: 768px) {
-  .skillgroup div:nth-child(4) {
-    font-size: 4.5px;
-    line-height: 23px;
-  }
-}
-
-@media (min-width: 320px) and (max-width: 420px) {
-  .skillgroup div:nth-child(4) {
-    font-size: 4px;
-    line-height: 18px;
-  }
-}
-
-address a {
+.contact address a {
   text-decoration: underline 2px;
   will-change: transform;
   transition:
