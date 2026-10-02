@@ -7,10 +7,11 @@
 }
 
 .site_header {
-  padding-top: max(1rem, env(safe-area-inset-top));
-  padding-left: max(1rem, env(safe-area-inset-left));
-  padding-right: max(1rem, env(safe-area-inset-right));
-  padding: 0 24px;
+  padding-top: env(safe-area-inset-top);
+  padding-right: max(24px, env(safe-area-inset-right));
+  padding-bottom: 0;
+  padding-left: max(24px, env(safe-area-inset-left));
+  min-height: calc(70px + env(safe-area-inset-top));
   width: 100%;
   height: 70px;
   display: grid;
@@ -172,7 +173,7 @@ h1 {
   }
 }
 
-@media (min-width: 320px) and (max-width: 768px) {
+@media (min-width: 480px) and (max-width: 768px) {
   #content {
     padding: 0 4vw;
     gap: 5px;
@@ -210,13 +211,6 @@ h1 {
 @media (max-width: 768px) {
   .leftprofile {
     gap: 5px;
-  }
-}
-
-@media (max-width: 430px) {
-  .leftprofile {
-    width: 45%;
-    gap: 1px;
   }
 }
 
@@ -266,7 +260,16 @@ h1 {
   }
 }
 
-@media (min-width: 320px) and (max-width: 768px) {
+@media (min-width: 481px) and (max-width: 768px) {
+  .site_header {
+    height: clamp(46px, 7vw, 55px);
+  }
+
+  .site_header span {
+    height: auto;
+    font-size: clamp(18px, 3vw, 24px);
+  }
+
   .leftprofile p {
     height: 300px;
     line-height: 1.5;
@@ -292,6 +295,7 @@ h1 {
   padding: clamp(10px, 2vw, 30px) clamp(10px, 2vw, 30px);
   background-color: rgba(0, 0, 0, 0.9);
   flex: 1;
+  min-width: 0;
   opacity: 0;
   animation: rightprofilefade-left 3s ease-out 6.5s 1 normal forwards;
 }
@@ -323,24 +327,47 @@ h1 {
   text-shadow: 2px 1px #777676;
 }
 
+.exhibitionexperience h2,
+.projecthistory h2 {
+  font-size: clamp(18px, calc(6px + 2.5vw), 38px);
+}
+
 .exhibitionexperience ul,
 .awardhistory ul,
 .projecthistory ul,
 .contact address {
   font-family: "Inter", sans-serif;
-  font-size: clamp(10px, 2vw, 20px);
   font-style: normal;
   line-height: clamp(1.4, 1vw, 2);
   color: #fffdf6;
 }
 
-@media (min-width: 320px) and (max-width: 768px) {
-  .exhibitionexperience ul,
-  .awardhistory ul,
-  .projecthistory ul,
-  .contact address {
-    font-size: clamp(7.5px, 2vw, 15px);
-  }
+.exhibitionexperience ul {
+  font-size: clamp(11px, calc(7px + 0.85vw), 18px);
+}
+
+.projecthistory ul {
+  font-size: clamp(10px, calc(6px + 0.85vw), 17px);
+}
+
+.awardhistory ul,
+.contact address {
+  font-size: clamp(10px, 2vw, 20px);
+}
+
+.awardhistory li,
+.exhibitionexperience li,
+.projecthistory li {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.awardhistory li svg,
+.exhibitionexperience li svg,
+.projecthistory li svg {
+  display: block;
+  flex-shrink: 0;
 }
 
 .skillgroup {
@@ -352,7 +379,7 @@ h1 {
 }
 
 .skillgroup li {
-  width: 230px;
+  width: 100%;
   height: 52px;
   display: flex;
   align-items: center;
@@ -368,97 +395,6 @@ h1 {
   white-space: nowrap;
 }
 
-.skillgroup li:nth-child(1) {
-  font-size: clamp(12px, 1vw, 15px);
-}
-
-.skillgroup li:nth-child(2) {
-  font-size: 15px;
-}
-
-.skillgroup li:nth-child(3) {
-  font-size: clamp(12px, 1vw, 15px);
-}
-
-.skillgroup li:nth-child(4) {
-  font-size: 15px;
-}
-
-@media (max-width: 1024px) {
-  .skillgroup {
-    grid-template-columns: repeat(2, 145px);
-    gap: 12px;
-  }
-
-  .skillgroup li {
-    width: 145px;
-    height: 38px;
-  }
-
-  .skillgroup li:nth-child(1),
-  .skillgroup li:nth-child(3) {
-    font-size: 11px;
-  }
-
-  .skillgroup li:nth-child(2) {
-    font-size: 13px;
-  }
-
-  .skillgroup li:nth-child(4) {
-    font-size: 9px;
-  }
-}
-
-@media (max-width: 768px) {
-  .skillgroup {
-    grid-template-columns: repeat(2, 90px);
-    gap: 10px;
-  }
-
-  .skillgroup li {
-    width: 90px;
-    height: 30px;
-  }
-
-  .skillgroup li:nth-child(1),
-  .skillgroup li:nth-child(3) {
-    font-size: 7px;
-  }
-
-  .skillgroup li:nth-child(2) {
-    font-size: 9px;
-  }
-
-  .skillgroup li:nth-child(4) {
-    font-size: 6px;
-  }
-}
-
-@media (max-width: 420px) {
-  .skillgroup {
-    grid-template-columns: repeat(2, 75px);
-    gap: 8px;
-  }
-
-  .skillgroup li {
-    width: 75px;
-    height: 26px;
-  }
-
-  .skillgroup li:nth-child(1),
-  .skillgroup li:nth-child(3) {
-    font-size: 6px;
-  }
-
-  .skillgroup li:nth-child(2) {
-    font-size: 8px;
-  }
-
-  .skillgroup li:nth-child(4) {
-    font-size: 5px;
-  }
-}
-
 .contact address {
   display: flex;
   flex-direction: column;
@@ -472,6 +408,143 @@ h1 {
   transition:
     background 0.5s,
     transform 0.2s ease;
+}
+
+@media (min-width: 769px) and (max-width: 1150px) {
+  .awardhistory ul {
+    font-size: clamp(11px, 1.35vw, 16px);
+  }
+
+  .skillgroup {
+    display: grid;
+    grid-template-columns: repeat(2, clamp(165px, 20vw, 230px));
+    gap: clamp(10px, 1.5vw, 18px);
+  }
+
+  .skillgroup li {
+    width: 100%;
+    height: clamp(40px, 4.5vw, 52px);
+    padding: 0 clamp(6px, 1vw, 12px);
+  }
+
+  .skillgroup li:nth-child(1) {
+    font-size: clamp(10px, 1.3vw, 16px);
+  }
+
+  .skillgroup li:nth-child(2) {
+    font-size: clamp(13px, 1.5vw, 18px);
+  }
+
+  .skillgroup li:nth-child(3) {
+    font-size: clamp(11px, 1.35vw, 16px);
+  }
+
+  .skillgroup li:nth-child(4) {
+    font-size: clamp(12px, 1.45vw, 18px);
+  }
+}
+
+@media (max-width: 768px) {
+  .awardhistory ul li {
+    font-size: clamp(8px, 1.55vw, 12px);
+  }
+
+  .skillgroup {
+    width: 70%;
+    grid-template-columns: 1fr;
+    gap: clamp(6px, 1vw, 10px);
+  }
+
+  .skillgroup li {
+    width: 100%;
+    height: clamp(34px, calc(14px + 4.2vw), 46px);
+    padding: 0 8px;
+    font-size: clamp(16px, calc(8px + 1.7vw), 21px);
+    white-space: nowrap;
+    line-height: 1.2;
+  }
+
+  .skillgroup li:nth-child(1) {
+    font-size: clamp(11px, 1.8vw, 14px);
+  }
+
+  .skillgroup li:nth-child(2) {
+    font-size: clamp(12px, 2vw, 15px);
+  }
+
+  .skillgroup li:nth-child(3) {
+    font-size: clamp(10px, 1.7vw, 13px);
+  }
+
+  .skillgroup li:nth-child(4) {
+    font-size: clamp(11px, 1.8vw, 14px);
+  }
+
+  .contact h2 {
+    font-size: clamp(21px, calc(11px + 2.08vw), 27px);
+  }
+
+  .contact address {
+    font-size: clamp(13px, calc(6.3px + 1.39vw), 17px);
+  }
+}
+
+@media (max-width: 480px) {
+  #content {
+    flex-direction: column;
+    gap: clamp(45px, 12vw, 70px);
+    padding-left: max(4vw, env(safe-area-inset-left));
+    padding-right: max(4vw, env(safe-area-inset-right));
+    padding-bottom: max(20px, env(safe-area-inset-bottom));
+  }
+
+  .site_header {
+    height: auto;
+    min-height: calc(46px + env(safe-area-inset-top));
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: 0;
+  }
+
+  .site_header span {
+    height: auto;
+    font-size: clamp(12px, 4vw, 16px);
+  }
+
+  .site_header span:nth-child(2) {
+    justify-self: center;
+    font-size: clamp(11px, 3.8vw, 15px);
+  }
+
+  .leftprofile {
+    width: 100%;
+    align-items: stretch;
+    gap: 20px;
+  }
+
+  .leftprofile p {
+    width: 100%;
+    height: auto;
+  }
+
+  .Rightprofile {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .leftprofile p,
+  .exhibitionexperience ul,
+  .awardhistory ul,
+  .projecthistory ul,
+  .contact address {
+    font-size: clamp(12px, calc(6px + 1.875vw), 15px);
+  }
+  .awardhistory h2 {
+    font-size: clamp(20px, 5vw, 24px);
+  }
+
+  .awardhistory ul li {
+    font-size: clamp(9px, 2.6vw, 13px);
+  }
 }
 
 a:focus {
@@ -519,8 +592,4 @@ a:active {
 
 a:visited {
   color: red;
-}
-
-svg {
-  top: 1px;
 }
